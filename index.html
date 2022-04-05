@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,27 +8,27 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-	<p 	id="js-paragraph" style="font-size: 16px;"
-		onmouseover="this.style.fontWeight = 'bold';"
-		onmouseout="this.style.fontWeight = 'normal';">
+	<p id="js-paragraph" style="font-size: 16px;">
 		V elipse spí lev.
 	</p>
-	
-	<button onclick="prepniZcervenani('js-paragraph')">červené po kliknutí</button>
-	<button onclick="zvetsitPismo('#js-paragraph', 1);">větší po kliknutí</button>
-	
+
+	<button id="prepniZcervenani">červené po kliknutí</button>
+	<button id="zvetsitPismo">větší po kliknutí</button>
+
 	<h2>Audio ovladač</h2>
-	<button onclick="prehraj('#js-audio')">Prehraj</button>
-	<button onclick="pauzni('#js-audio')">Pauzni</button>
-	<button onclick="upravHlasitost('#js-audio', 0)">Ztišit</button>
-	<button onclick="upravHlasitost('#js-audio', 0.5)">Hlasitost tak akorát</button>
-	<button onclick="upravHlasitost('#js-audio', 1)">Hlasitost na maximum</button>
-	<button onclick="resetuj('#js-audio')">Nastav na začátek</button>
-	
+	<button id="prehraj">Prehraj</button>
+	<button id="pauzni">Pauzni</button>
+	<button id="ztisit"> Ztišit</button>
+	<button id="ztisitAkorat">Hlasitost tak akorát</button>
+	<button id="maximum">Hlasitost na maximum</button>
+	<button id="resetuj">Nastav na začátek</button>
+
 	<audio id="js-audio" src="audio/dingdingdang.mp3" preload="auto"></audio>
-	
+
 	<script src="main.js"></script>
 </body>
+
 </html>

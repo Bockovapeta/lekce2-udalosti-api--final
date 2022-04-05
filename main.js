@@ -5,9 +5,23 @@
  * 
  * @param {string} elementId 
  */
-function prepniZcervenani(elementId) {
-    document.getElementById(elementId).classList.toggle('cerveny-text');
-}
+
+let text = document.querySelector('#js-paragraph');
+
+text.addEventListener('mouseover', function () {
+    text.style.fontWeight = 'bold';
+});
+
+text.addEventListener('mouseout', function () {
+    text.style.fontWeight = 'normal';
+});
+
+
+document.querySelector('#prepniZcervenani').addEventListener('click', function () {
+    text.classList.toggle('cerveny-text');
+});
+
+
 
 /**
  * Funkce zvětší/změnší písmo v elementu o definovanou velikost
@@ -15,25 +29,41 @@ function prepniZcervenani(elementId) {
  * @param {string} elementSelector 
  * @param {int} fontSizeChange 
  */
-function zvetsitPismo(elementSelector, fontSizeChange) {
-    let element = document.querySelector(elementSelector);
-    let currentFontSize = parseInt(element.style.fontSize);
-    element.style.fontSize = (currentFontSize + fontSizeChange) + 'px';
-}
+document.querySelector('#zvetsitPismo').addEventListener('click', function () {
+    let currentFontSize = parseInt(text.style.fontSize);
+    text.style.fontSize = (currentFontSize + 2 + 'px');
+});
+
+
+
 
 /*--------------*/
 /* AUDIO FUNKCE */
 /*--------------*/
 
-function prehraj(elementSelector) {
-    document.querySelector(elementSelector).play();
-}
-function pauzni(elementSelector) {
-    document.querySelector(elementSelector).pause();
-}
-function upravHlasitost(elementSelector, volumeValue) {
-    document.querySelector(elementSelector).volume = volumeValue;
-}
-function resetuj(elementSelector) {
-    document.querySelector(elementSelector).currentTime = 0;
-}
+document.querySelector('#prehraj').addEventListener('click', function () {
+    document.querySelector('#js-audio').play();
+});
+
+
+document.querySelector('#pauzni').addEventListener('click', function () {
+    document.querySelector('#js-audio').pause();
+});
+
+document.querySelector('#ztisit').addEventListener('click', function () {
+    document.querySelector('#js-audio').volume = 0;
+});
+
+document.querySelector('#ztisitAkorat').addEventListener('click', function () {
+    document.querySelector('#js-audio').volume = 0.5;
+});
+
+document.querySelector('#maximum').addEventListener('click', function () {
+    document.querySelector('#js-audio').volume = 1;
+});
+
+document.querySelector('#resetuj').addEventListener('click', function () {
+    document.querySelector('#js-audio').currentTime = 0;
+});
+
+
